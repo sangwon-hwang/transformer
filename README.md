@@ -56,13 +56,16 @@ Note: cuda11.1 is used (Build cuda_11.5.r11.5/compiler.30672275_0)
 # conda
 conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
 # pip
-pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+pip install torch==1.8.1
+pip install torch==1.11.0 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
 pip install tensorflow-gpu==2.4.1
 ```
 
 ```bash
 # wheel package install
-pip install transformers
+pip install -q transformers datasets
+pip install torch==1.8.1
+pip install -q timm
 
 # development installation
 git clone --recursive https://github.com/huggingface/transformers.git
@@ -117,9 +120,10 @@ make -j && make install
 
 
 # How To Use
-## Install fs3 as development mode
+## Install repo as development mode
 ```bash
 pip install -e .
 from .source import transformer
+
 ```
 
